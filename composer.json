@@ -1,0 +1,22 @@
+{
+  "name": "wzdxt/aixue-common",
+  "description": "Aixue common facilities",
+  "version": "0.1",
+  "authors": [
+    {
+      "name": "Dai Xintong",
+      "email": "wzdxt0624@gmail.com"
+    }
+  ],
+  "require": {
+    "php": "~7.0",
+  },
+  "autoload": {
+    "psr-4": {
+      "Aixue\\Common\\": "src/"
+    },
+    "files": [
+      "helper/error_code.php"
+    ]
+  }
+}
