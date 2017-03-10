@@ -25,7 +25,8 @@ class AixueExceptionTest extends \PHPUnit_Framework_TestCase
     {
         $e = new AixueException(99999);
         $this->assertEquals(99999, $e->getCode());
-        $this->assertEquals(AixueException::UNDEFINED_ERROR_MSG, $e->getMessage());
+        var_export($e->getMessage());
+        $this->assertEmpty($e->getMessage());
         $this->assertNull($e->getPrevious());
     }
 
