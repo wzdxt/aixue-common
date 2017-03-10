@@ -9,6 +9,7 @@
 namespace Aixue\Common\Exceptions;
 
 
+use Aixue\Common\Jobs\EmailJob;
 use Aixue\Common\Utils\Response;
 use Exception;
 use Illuminate\Auth\Access\AuthorizationException;
