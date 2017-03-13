@@ -37,7 +37,7 @@ class HandlerChain extends ExceptionHandler
 
     public function render($request, Exception $e)
     {
-        return app()->make($this->renderer)->render($e);
+        return app()->make($this->renderer)->render($request, $e);
     }
 
 }
