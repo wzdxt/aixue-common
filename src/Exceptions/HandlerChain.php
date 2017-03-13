@@ -31,13 +31,13 @@ class HandlerChain extends ExceptionHandler
     {
         foreach ($this->report_chain as $handler)
         {
-            $handler->report($e);
+            app()->make($handler)->report($e);
         }
     }
 
     public function render($request, Exception $e)
     {
-        return $this->renderer->render($e);
+        return app()->make($this->renderer)->render($e);
     }
 
 }
