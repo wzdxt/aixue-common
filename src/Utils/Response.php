@@ -44,10 +44,10 @@ class Response
      * @param string $msg
      * @return array
      */
-    public function error($code = CODE_FAIL, array $data = [], $msg = null)
+    public function error($code = CODE_FAIL, $msg = null)
     {
         $method = $this->method;
-        return $this->$method($code, $data, $msg);
+        return $this->$method($code, [], $msg);
     }
 
     /**
@@ -94,7 +94,7 @@ class Response
      */
     private function getFormatRes($code, $msg = null)
     {
-        is_null($msg) && $msg = config("code_msg." . $code);
+        empty($msg) && $msg = config("code_msg." . $code);
         $response = array(
             "status" => $code,
             "msg" => is_null($msg) ? "错误信息没写啊" : $msg,
