@@ -25,7 +25,10 @@ class ExceptionHandlerServiceProvider extends ServiceProvider
     public function register()
     {
         // 公共部分的错误代码加入配置
-        $this->mergeConfigFrom(__DIR__.'/../../config/code_msg.php', 'code_msg');
+        $key = 'code_msg';
+        $path = __DIR__.'/../../config/code_msg.php';
+        $config = $this->app['config']->get($key, []);
+        $this->app['config']->set($key,  $config + require $path);
 
         $this->app->singleton(\Illuminate\Contracts\Debug\ExceptionHandler::class, function($app)
         {
