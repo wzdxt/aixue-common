@@ -28,4 +28,9 @@ class CommonServiceProvider extends BaseServiceProvider
         }
     }
 
+    public function register()
+    {
+
+    }
+
 }
