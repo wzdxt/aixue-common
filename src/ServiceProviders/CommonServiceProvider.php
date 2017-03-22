@@ -30,7 +30,7 @@ class CommonServiceProvider extends BaseServiceProvider
 
     public function register()
     {
-
+        $this->app['router']->pushMiddlewareToGroup('web', \Aixue\Common\Middleware\RequestIdMiddleware::class);
     }
 
 }
